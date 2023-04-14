@@ -78,3 +78,8 @@ h1 {
 .bold {
   font-weight: 700;
 }
+
+.paragraph-font-size {
+  font-size: 17px;
+  margin-top: 3px;
+}

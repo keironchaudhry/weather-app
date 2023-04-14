@@ -21,15 +21,15 @@ function App() {
         <div className="bottom">
           <div className="feels">
             <h2 className="bold">70°F</h2>
-            <p>Feels like</p>
+            <p className="paragraph-font-size">Feels like</p>
           </div>
           <div className="humidity">
             <p className="bold">20%</p>
-            <p>Humidity</p>
+            <p className="paragraph-font-size">Humidity</p>
           </div>
           <div className="wind">
             <p className="bold">12 mph</p>
-            <p>Wind Speed</p>
+            <p className="paragraph-font-size">Wind Speed</p>
           </div>
         </div>
       </div>
