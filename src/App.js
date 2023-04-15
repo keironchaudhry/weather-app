@@ -18,7 +18,7 @@ function App() {
 
   const handleKeyDown = (event) => {
     if (event.keyCode === 13) {
-      searchLocation;
+      searchLocation();
     }
   };
 
