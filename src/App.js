@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 function App() {
+  const [data, setData] = useState({});
+  const [location, setLocation] = useState({});
+
   const url = process.env.REACT_WEATHER_APP_API_KEY;
+
+  const searchLocation = (event) => {
+    if (event.key === "Enter") {
+      axios.get(url).then((response) => {
+        setData(response.data);
+        console.log(response);
+      });
+    }
+  };
 
   return (
     <div className="app">
