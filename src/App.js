@@ -5,7 +5,7 @@ function App() {
   const [data, setData] = useState({});
   const [location, setLocation] = useState({});
 
-  const url = process.env.REACT_WEATHER_APP_API_KEY;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
 
   const searchLocation = (event) => {
     if (event.key === "Enter") {
@@ -16,20 +16,14 @@ function App() {
     }
   };
 
-  const handleKeyDown = (event) => {
-    if (event.keyCode === 13) {
-      searchLocation();
-    }
-  };
-
   return (
     <div className="app">
       <div className="search">
         <input
           type="text"
           value={location}
-          onChange={(event) => setLocation(event.target.value)}
-          onKeyDown={handleKeyDown}
+          onChange={event => setLocation(event.target.value)}
+          onKeyDown={searchLocation}
           placeholder="Enter location"
         />
       </div>
