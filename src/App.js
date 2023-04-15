@@ -16,8 +16,23 @@ function App() {
     }
   };
 
+  const handleKeyDown = (event) => {
+    if (event.keyCode === 13) {
+      searchLocation;
+    }
+  };
+
   return (
     <div className="app">
+      <div className="search">
+        <input
+          type="text"
+          value={location}
+          onChange={(event) => setLocation(event.target.value)}
+          onKeyDown={handleKeyDown}
+          placeholder="Enter location"
+        />
+      </div>
       <div className="container">
         <div className="top">
           <div className="location">
