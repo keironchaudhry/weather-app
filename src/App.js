@@ -19,6 +19,7 @@ function App() {
 
   return (
     <div className="app">
+      {/* Search Filter */}
       <div className="search">
         <input
           type="text"
@@ -28,29 +29,34 @@ function App() {
           placeholder="Enter location"
         />
       </div>
+
       <div className="container">
+        {/* Top section */}
         <div className="top">
           <div className="location">
-            <p>Malaga</p>
+            <p>{data.name}</p>
           </div>
           <div className="temp">
-            <h1>65°F</h1>
+            {data.main ? <h1>{data.main.temp}°F</h1> : null}
           </div>
           <div className="description">
-            <p>Clouds</p>
+            {data.weather ? <p>{data.weather[0].main}</p> : null}
           </div>
         </div>
+        {/* Bottom section */}
         <div className="bottom">
           <div className="feels">
-            <h2 className="bold">70°F</h2>
+            {data.main ? (
+              <h2 className="bold">{data.main.feels_like}°F</h2>
+            ) : null}
             <p className="paragraph-font-size">Feels like</p>
           </div>
           <div className="humidity">
-            <p className="bold">20%</p>
+            {data.main ? <p className="bold">{data.main.humidity}%</p> : null}
             <p className="paragraph-font-size">Humidity</p>
           </div>
           <div className="wind">
-            <p className="bold">12 mph</p>
+            {data.wind ? <p className="bold">{data.wind.speed} mph</p> : null}
             <p className="paragraph-font-size">Wind Speed</p>
           </div>
         </div>
