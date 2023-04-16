@@ -44,22 +44,25 @@ function App() {
           </div>
         </div>
         {/* Bottom section */}
-        <div className="bottom">
-          <div className="feels">
-            {data.main ? (
-              <h2 className="bold">{data.main.feels_like}°F</h2>
-            ) : null}
-            <p className="paragraph-font-size">Feels like</p>
+
+        {data.name != undefined && (
+          <div className="bottom">
+            <div className="feels">
+              {data.main ? (
+                <h2 className="bold">{data.main.feels_like}°F</h2>
+              ) : null}
+              <p className="paragraph-font-size">Feels like</p>
+            </div>
+            <div className="humidity">
+              {data.main ? <p className="bold">{data.main.humidity}%</p> : null}
+              <p className="paragraph-font-size">Humidity</p>
+            </div>
+            <div className="wind">
+              {data.wind ? <p className="bold">{data.wind.speed} mph</p> : null}
+              <p className="paragraph-font-size">Wind Speed</p>
+            </div>
           </div>
-          <div className="humidity">
-            {data.main ? <p className="bold">{data.main.humidity}%</p> : null}
-            <p className="paragraph-font-size">Humidity</p>
-          </div>
-          <div className="wind">
-            {data.wind ? <p className="bold">{data.wind.speed} mph</p> : null}
-            <p className="paragraph-font-size">Wind Speed</p>
-          </div>
-        </div>
+        )}
       </div>
     </div>
   );
