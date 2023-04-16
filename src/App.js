@@ -3,9 +3,9 @@ import axios from "axios";
 
 function App() {
   const [data, setData] = useState({});
-  const [location, setLocation] = useState('');
+  const [location, setLocation] = useState("");
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${process.env.REACT_APP_WEATHER_API_KEY}`;
 
   const searchLocation = (event) => {
     if (event.key === "Enter") {
@@ -13,6 +13,7 @@ function App() {
         setData(response.data);
         console.log(response);
       });
+      setLocation("");
     }
   };
 
@@ -22,7 +23,7 @@ function App() {
         <input
           type="text"
           value={location}
-          onChange={event => setLocation(event.target.value)}
+          onChange={(event) => setLocation(event.target.value)}
           onKeyDown={searchLocation}
           placeholder="Enter location"
         />
