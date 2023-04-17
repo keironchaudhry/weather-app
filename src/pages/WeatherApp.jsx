@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { WeatherAppTop } from "./WeatherAppTop";
 
 export default function WeatherApp() {
   const [data, setData] = useState({});
@@ -32,17 +33,7 @@ export default function WeatherApp() {
 
       <div className="container">
         {/* Top section */}
-        <div className="top">
-          <div className="location">
-            <p>{data.name}</p>
-          </div>
-          <div className="temp">
-            {data.main ? <h1>{data.main.temp.toFixed()}°C</h1> : null}
-          </div>
-          <div className="description">
-            {data.weather ? <p>{data.weather[0].main}</p> : null}
-          </div>
-        </div>
+        <WeatherAppTop data={data} />
 
         {/* Bottom section */}
         {data.name !== undefined && (
